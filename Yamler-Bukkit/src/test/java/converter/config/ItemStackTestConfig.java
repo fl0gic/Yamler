@@ -1,9 +1,11 @@
 package converter.config;
 
 import helper.TestItemStack;
+import java.util.Set;
 import net.cubespace.Yamler.Config.YamlConfig;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
@@ -46,7 +48,22 @@ public class ItemStackTestConfig extends YamlConfig {
             public void setDisplayName(String s) {
             }
 
-            @Override
+          @Override
+          public boolean hasLocalizedName() {
+            return false;
+          }
+
+          @Override
+          public String getLocalizedName() {
+            return null;
+          }
+
+          @Override
+          public void setLocalizedName(String s) {
+
+          }
+
+          @Override
             public boolean hasLore() {
                 return true;
             }
@@ -97,12 +114,47 @@ public class ItemStackTestConfig extends YamlConfig {
                 return false;
             }
 
-            @Override
+          @Override
+          public void addItemFlags(ItemFlag... itemFlags) {
+
+          }
+
+          @Override
+          public void removeItemFlags(ItemFlag... itemFlags) {
+
+          }
+
+          @Override
+          public Set<ItemFlag> getItemFlags() {
+            return null;
+          }
+
+          @Override
+          public boolean hasItemFlag(ItemFlag itemFlag) {
+            return false;
+          }
+
+          @Override
+          public boolean isUnbreakable() {
+            return false;
+          }
+
+          @Override
+          public void setUnbreakable(boolean b) {
+
+          }
+
+          @Override
             public ItemMeta clone() {
                 return null;
             }
 
-            @Override
+          @Override
+          public Spigot spigot() {
+            return null;
+          }
+
+          @Override
             public Map<String, Object> serialize() {
                 return null;
             }
