@@ -150,11 +150,6 @@ public class ItemStackTestConfig extends YamlConfig {
             }
 
           @Override
-          public Spigot spigot() {
-            return null;
-          }
-
-          @Override
             public Map<String, Object> serialize() {
                 return null;
             }

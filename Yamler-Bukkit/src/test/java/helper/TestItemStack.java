@@ -148,11 +148,6 @@ public class TestItemStack extends ItemStack {
                 }
 
                 @Override
-                public Spigot spigot() {
-                    return null;
-                }
-
-                @Override
                 public Map<String, Object> serialize() {
                     return null;
                 }
