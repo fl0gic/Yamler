@@ -28,13 +28,12 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <relocations>
-            <relocation>
-              <pattern>org.bstats</pattern>
-              <shadedPattern>net.cubespace</shadedPattern>
-            </relocation>
-          </relocations>
+          <source>8</source>
+          <target>8</target>
         </configuration>
       </plugin>
     </plugins>
@@ -54,12 +53,6 @@
       <groupId>org.bukkit</groupId>
       <artifactId>bukkit</artifactId>
       <version>1.12.2-R0.1-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.bstats</groupId>
-      <artifactId>bstats-bukkit</artifactId>
-      <version>1.4</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

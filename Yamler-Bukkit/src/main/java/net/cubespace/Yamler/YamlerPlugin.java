@@ -1,6 +1,5 @@
 package net.cubespace.Yamler;
 
-import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
