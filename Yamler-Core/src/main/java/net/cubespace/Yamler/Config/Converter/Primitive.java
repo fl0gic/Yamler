@@ -33,14 +33,14 @@ public class Primitive implements Converter {
 
     @Override
     public Object fromConfig(Class type, Object section, ParameterizedType genericType) throws Exception {
-        switch(type.getSimpleName()) {
+        switch (type.getSimpleName()) {
             case "short":
                 return (section instanceof Short) ? section : new Integer((int) section).shortValue();
             case "byte":
                 return (section instanceof Byte) ? section : new Integer((int) section).byteValue();
             case "float":
-                if ( section instanceof Integer ) {
-                    return new Double( (int) section ).floatValue();
+                if (section instanceof Integer) {
+                    return new Double((int) section).floatValue();
                 }
 
                 return (section instanceof Float) ? section : new Double((double) section).floatValue();

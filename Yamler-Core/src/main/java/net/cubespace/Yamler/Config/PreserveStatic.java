@@ -8,5 +8,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface PreserveStatic {
-	boolean value() default true;
+    boolean value() default true;
 }

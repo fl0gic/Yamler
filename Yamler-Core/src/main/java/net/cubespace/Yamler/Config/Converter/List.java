@@ -1,6 +1,6 @@
 package net.cubespace.Yamler.Config.Converter;
 
-import net.cubespace.Yamler.Config.*;
+import net.cubespace.Yamler.Config.InternalConverter;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
@@ -46,8 +46,8 @@ public class List implements Converter {
             Converter converter = internalConverter.getConverter((Class) genericType.getActualTypeArguments()[0]);
 
             if (converter != null) {
-                for ( int i = 0; i < values.size(); i++ ) {
-                    newList.add( converter.fromConfig( ( Class ) genericType.getActualTypeArguments()[0], values.get( i ), null ) );
+                for (int i = 0; i < values.size(); i++) {
+                    newList.add(converter.fromConfig((Class) genericType.getActualTypeArguments()[0], values.get(i), null));
                 }
             } else {
                 newList = values;

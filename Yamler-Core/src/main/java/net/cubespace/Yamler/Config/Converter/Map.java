@@ -46,7 +46,7 @@ public class Map implements Converter {
             if (genericType.getActualTypeArguments().length == 2) {
                 Class keyClass = ((Class) genericType.getActualTypeArguments()[0]);
 
-                if ( section == null ) section = new HashMap<>();
+                if (section == null) section = new HashMap<>();
 
                 java.util.Map<?, ?> map1 = (section instanceof java.util.Map) ? (java.util.Map) section : ((ConfigSection) section).getRawMap();
                 for (java.util.Map.Entry<?, ?> entry : map1.entrySet()) {

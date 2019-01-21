@@ -19,7 +19,7 @@ public class Config implements Converter {
 
     @Override
     public Object toConfig(Class<?> type, Object obj, ParameterizedType parameterizedType) throws Exception {
-        return (obj instanceof Map) ? obj : ((YamlConfig) obj).saveToMap( obj.getClass() );
+        return (obj instanceof Map) ? obj : ((YamlConfig) obj).saveToMap(obj.getClass());
     }
 
     @Override
@@ -34,7 +34,7 @@ public class Config implements Converter {
         obj.loadFromMap((section instanceof Map) ? (Map) section : ((ConfigSection) section).getRawMap(), type);
         return obj;
     }
-    
+
     // recursively handles enclosed classes
     public Object newInstance(Class type) throws Exception {
         Class enclosingClass = type.getEnclosingClass();

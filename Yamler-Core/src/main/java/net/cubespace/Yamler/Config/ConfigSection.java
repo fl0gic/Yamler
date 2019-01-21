@@ -53,7 +53,7 @@ public class ConfigSection {
     }
 
     public void set(String path, Object value) {
-        set( path, value, true );
+        set(path, value, true);
     }
 
     public void set(String path, Object value, boolean searchForSubNodes) {
@@ -65,13 +65,13 @@ public class ConfigSection {
         int i1 = -1, i2 = 0;
         ConfigSection section = this;
 
-        if ( searchForSubNodes ) {
-            while ( ( i1 = path.indexOf( '.', i2 = i1 + 1 ) ) != -1 ) {
-                String node = path.substring( i2, i1 );
-                ConfigSection subSection = section.getConfigSection( node );
+        if (searchForSubNodes) {
+            while ((i1 = path.indexOf('.', i2 = i1 + 1)) != -1) {
+                String node = path.substring(i2, i1);
+                ConfigSection subSection = section.getConfigSection(node);
 
-                if ( subSection == null ) {
-                    section = section.create( node );
+                if (subSection == null) {
+                    section = section.create(node);
                 } else {
                     section = subSection;
                 }

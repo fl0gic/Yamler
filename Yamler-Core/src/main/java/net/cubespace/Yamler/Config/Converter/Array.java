@@ -21,11 +21,11 @@ public class Array implements Converter {
     public Object toConfig(Class<?> type, Object obj, ParameterizedType parameterizedType) throws Exception {
         Class<?> singleType = type.getComponentType();
         Converter conv = internalConverter.getConverter(singleType);
-        if(conv == null)
+        if (conv == null)
             return obj;
 
         Object[] ret = new Object[java.lang.reflect.Array.getLength(obj)];
-        for(int i = 0; i < ret.length; i++)
+        for (int i = 0; i < ret.length; i++)
             ret[i] = conv.toConfig(singleType, java.lang.reflect.Array.get(obj, i), parameterizedType);
         return ret;
     }
@@ -35,7 +35,7 @@ public class Array implements Converter {
         Class<?> singleType = type.getComponentType();
         java.util.List values;
 
-        if(section instanceof java.util.List)
+        if (section instanceof java.util.List)
             values = (java.util.List) section;
         else {
             values = new ArrayList();
@@ -44,10 +44,10 @@ public class Array implements Converter {
 
         Object ret = java.lang.reflect.Array.newInstance(singleType, values.size());
         Converter conv = internalConverter.getConverter(singleType);
-        if(conv == null)
+        if (conv == null)
             return values.toArray((Object[]) ret);
 
-        for(int i = 0; i < values.size(); i++)
+        for (int i = 0; i < values.size(); i++)
             java.lang.reflect.Array.set(ret, i, conv.fromConfig(singleType, values.get(i), genericType));
         return ret;
     }
