@@ -9,10 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class YamlConfig extends ConfigMapper implements IConfig {
-    public YamlConfig() {
-
-    }
-
+    public YamlConfig() {}
     public YamlConfig(String filename) {
         CONFIG_FILE = new File(filename + (filename.endsWith(".yml") ? "" : ".yml"));
     }
